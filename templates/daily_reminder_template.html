@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Reminder</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #343a40;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      .email-header {
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #6c757d;
+      }
+
+      .email-header h1 {
+        color: #007bff;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .email-body {
+        padding: 20px 0;
+      }
+
+      .email-body h2 {
+        color: #6c757d;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .email-body p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .email-footer {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 2px solid #6c757d;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #ffffff;
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="email-container">
+      <div class="email-header">
+        <h1>Hello, {{ username }}!</h1>
+      </div>
+      <div class="email-body">
+        <h2>We Miss You at the Library!</h2>
+        <p>
+          It's been a while since your last visit to our library app. We have
+          some great new books and features waiting just for you!
+        </p>
+        <p>
+          Come back and explore the latest additions to our collection. Whether
+          you're looking for a gripping novel, insightful non-fiction, or just
+          browsing, there's something for everyone.
+        </p>
+        <p>We can't wait to see you again!</p>
+        <div style="text-align: center">
+          <a href="http://127.0.0.1:8000" class="btn btn-primary"
+            >Revisit the Library</a
+          >
+        </div>
+      </div>
+      <div class="email-footer">
+        <p>Happy Reading!</p>
+        <p>The Library Team</p>
+      </div>
+    </div>
+  </body>
+</html>

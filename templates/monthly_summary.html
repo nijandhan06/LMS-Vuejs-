@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Summary Report</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        color: #343a40;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      h1 {
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        color: #6c757d;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
+
+      table th,
+      table td {
+        padding: 10px;
+        border: 1px solid #dee2e6;
+      }
+
+      table th {
+        background-color: #007bff;
+        color: #ffffff;
+        text-align: left;
+      }
+
+      table td {
+        text-align: left;
+      }
+
+      .email-footer {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 2px solid #6c757d;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Monthly Summary Report</h1>
+
+      <h2>Book Ratings</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Rating</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for rating in ratings %}
+          <tr>
+            <td>{{ rating.book_name }}</td>
+            <td>{{ rating.rating_value }}</td>
+            <td>{{ rating.user_feedback }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h2>Books Issued</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Book Title</th>
+            <th>Requested Date</th>
+            <th>Return Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for book_request in issued_books %}
+          <tr>
+            <td>{{ book_request.book.title }}</td>
+            <td>{{ book_request.date_requested }}</td>
+            <td>{{ book_request.date_return }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="email-footer">
+        <p>Thank you for being a part of our library community!</p>
+        <p>The Library Team</p>
+      </div>
+    </div>
+  </body>
+</html>
